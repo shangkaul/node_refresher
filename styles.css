@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+body{
+    font-family: Lato;
+    max-width: 900px;
+    text-align: center;
+    margin: auto;
+}
+
+th{
+    border: 1px solid black;
+    background-color: rgb(80, 149, 253);
+}
+
+tr,td,table{
+    border: 1px solid black;
+}
