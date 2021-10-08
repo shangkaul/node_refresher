@@ -106,6 +106,6 @@ app.post('/del',(req,res)=>{
               });
     });
 
-app.listen(process.env.PORT||port,()=>{
+app.listen(process.env.PORT||2002,()=>{
     console.log("Server running at localhost:"+process.env.PORT)
 });
