@@ -55,6 +55,57 @@ app.get("/all", (req, res) => {
     })
 });
 
+app.post('/add',(req,res)=>{
+    // console.log(req.body);
+   
+    const name=req.body.name;
+    const desig=req.body.desig;
+    const dept=req.body.dept;
+    
+    var sql='INSERT INTO users (name,desig,dept) VALUES ("'+name+'","'+desig+'","'+dept+'")';
+        con.query(sql, function (err, result) {
+            if (err){
+                console.log(err);
+                res.json({
+                    success:false,
+                    status:400
+                })
+            }
+            else
+            {
+                res.json({
+                    success:true,
+                    status:200
+                })
+            console.log("Data successfully entered!");}
+          });
+    });
+
+
+
+app.post('/del',(req,res)=>{
+    // console.log(req.body);
+    const id=req.body.id;
+            
+        var sql='delete from users where id="'+id+'"';
+            con.query(sql, function (err, result) {
+                if (err){
+                    console.log(err);
+                    res.json({
+                        success:false,
+                        status:400
+                    })
+                }
+                else
+                {
+                    res.json({
+                        success:true,
+                        status:200
+                    })
+                console.log("User deleted!");}
+              });
+    });
+
 app.listen(process.env.PORT||port,()=>{
     console.log("Server running at localhost:"+port)
 });
