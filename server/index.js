@@ -17,7 +17,9 @@ app.use(express.urlencoded({
   extended: false
 }));
 app.use(methodOverride());
-app.use(cors());
+app.use(cors({
+    origin: '*'
+}));
 
 
 var con = mysql.createConnection({
