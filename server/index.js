@@ -17,9 +17,11 @@ app.use(express.urlencoded({
   extended: false
 }));
 app.use(methodOverride());
-app.use(cors({
-    origin: '*'
-}));
+app.use(
+    cors({
+      origin: "https://stupefied-payne-188c90.netlify.app/" // restrict calls to those this address
+    })
+  );
 
 
 var con = mysql.createConnection({
@@ -107,7 +109,7 @@ app.post('/del',(req,res)=>{
                 console.log("User deleted!");}
               });
     });
-
-app.listen(process.env.PORT||2002,()=>{
-    console.log("Server running at localhost:"+process.env.PORT)
+app.timeout = 0;
+app.listen(process.env.PORT||port,()=>{
+    console.log("Server running at localhost:"+port)
 });

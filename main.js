@@ -1,4 +1,4 @@
-const url="https://node-refresher.herokuapp.com"
+const url="https://node-refresher-server.shangkaul.repl.co";
 
 
 function addForm()
