@@ -21,10 +21,10 @@ app.use(cors());
 
 
 var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password:"",
-   database:"test",
+    host: "sql482.main-hosting.eu",
+    user: "u191494829_shangkaul",
+    password:"?6JVqN2F6Rq",
+   database:"u191494829_sql_playground",
  
   });
   con.connect((err)=> {
